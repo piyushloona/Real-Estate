@@ -1,0 +1,55 @@
+{% include 'header1.html' %}
+{% load static %}
+<div class="formr" style="width:100%;background-color:#337AB7;height:600px;">
+<form method="POST" class="post-form"   action="{% url 'addproperty1' %}" autocomplete="off">
+    {% csrf_token %}
+ <hr>
+    <div class="py">
+            <div class="formr">
+                    <h2 style="text-align: center;margin-right:60px;color:white;">Add Property</h2></br>
+                     {% if error %}
+	        <div class="alert alert-danger">{{error}}</div>
+	                {% endif %}
+                <div class="hyy">
+                <div class="col-sm-4">
+                    <label for style="font-size: 20px;color:white;margin-top:20px; "class="text">State</label><br>
+            <select name="Stater"  style="width:450px; font-size:30px;">
+    <option value="Select Stater"  style="font-size:30px;" >Select State</option>
+        {% for i in fetch %}
+        <option value="{{i.Stater}}">{{i.Stater}}</option>
+        {% endfor %}
+            </select></div>
+<br>
+                    <input type="hidden" class="txt" name="uid" value="{{uid}}" autocomplete="off">
+                <div class="col-sm-4">
+                    <label for  style="font-size: 20px; color:white;"class="text">District</label><br>
+                    <input type="text" class="txt" autocomplete="off"  style="width:450px;font-size:25px;" name="District" value="{{values.district}}"><br>
+                </div>
+                <div class="col-sm-4">
+                    <label for  style="font-size: 20px;color:white;"class="text">Local Address</label><br>
+                    <input type="text" class="txt"     style="width:450px;font-size:25px;" name="Local" value="{{values.local}}"><br>
+                </div>
+                </div>
+                <div class="main" style="margin-top:5%;">
+                <div class="col-sm-4">
+                    <label for  style="font-size: 20px;color:white;"class="text">Description</label><br>
+                    <input type="text" class="txt"   style="width:450px;font-size:25px;"  name="Description" value="{{values.des}}"><br>
+</div>
+                <div class="col-sm-4">
+                    <label for  style="font-size: 20px;color:white;"class="text">Rent</label><br>
+                    <input type="text" class="txt"   style="width:450px;font-size:25px;"  name="Rent" value="{{values.rent}}"><br>
+                </div>
+            <div class="col-sm-4">
+                    <label for  style="font-size: 20px;color:white;"class="text">Mobile NO. </label><br>
+                    <input type="text" class="txt"    style="width:450px;font-size:25px;" name="Mobile" value="{{values.mobile}}" ><br>
+</div>
+                </div>
+                    <button type="submit" class="btn" value="Submit" style="background-color:white;color:black;margin-top:80px;font-size:30px;margin-left:40%;">Submit</button>
+            </div>
+
+    </div>
+</form>
+                </div>
+
+</div>
+{% include 'footer.html' %}

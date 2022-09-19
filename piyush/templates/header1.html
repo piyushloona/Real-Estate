@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0px;
+}
+
+ul li{
+    float:left;
+}
+ul{
+
+    list-style: none;
+    display: flex;
+    height:80px;
+    color:white;
+    background-color:#337AB7;
+
+}
+
+nav ul li {
+    margin-left: 100px;
+    padding:20px;
+    font-size:20px;}
+li:hover{background-color:black;}
+nav ul li a{color:white;}
+.customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.customers td, .customers th {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+
+.customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:black;
+    color:white;
+}
+.customers tr{
+    color:white;
+
+}
+.main{width:100%;float:left;}
+
+.customers td{color:black;}
+.customers a{color:black;}
+.wrapper{width:100%}
+.menu{width:100%;}
+
+</style>
+</head>
+<body>
+<div class="wrapper">
+<header>
+    <div class="menu">
+
+<nav class="navbar-inverse">
+
+    <ul>
+        <li><a href="">Real Estate</a></li>
+         <li><a href="{% url 'homes' %}"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+        <li><a href="{% url 'prop' %}"><span class="glyphicon glyphicon-plus-sign"></span> Add  House On Rent</a></li>
+        <li><a href="{% url 'search' %}"> <span class="	glyphicon glyphicon-search"></span> Search Home</a></li>
+        <li><a href="{% url 'show' %}"><span class="glyphicon glyphicon-eye-open"></span> View Properties</a></li>
+        <li><a href="{% url 'Con_mess' %}"> <span class="	glyphicon glyphicon-eye-open"></span> View Message</a></li>
+
+        <li><a href="{% url 'logout' %}"> <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+
+
+    </ul>
+</nav>
+        </div>
+</header>
+</div>

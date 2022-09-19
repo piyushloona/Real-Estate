@@ -1,0 +1,73 @@
+{% include 'header2.html' %}
+{% load static %}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<html>
+<style>
+table, th, td {
+  border: 4px solid black;
+  border-collapse: collapse;
+  margin-top:20px;
+  font-size:15px;
+  padding:20px;
+
+}
+th {
+  text-align: left;
+  color:black;
+  font-size:20px;
+}
+table{
+    border-radius:10px;
+
+}
+td{background-color: #D6EEEE; font-size:20px;color:black}
+
+
+</style>
+<body>
+    {% csrf_token %}
+<div class="container">
+<div class="col-sm-4">
+<!-- <img src="{% static 'image/45.png' %}" alt="my image" style="height:400px; width:600px;">-->
+</div>
+    <div class="col-sm-12" style="border-radius:10px;width:300px; margin-right:450px;height:400px; color:white;  ">
+        <h1 style="color:black;margin-left:20px;">Manage States</h1>
+
+<table class="customer" style=" margin-right:30px;" >
+<tr>
+        <th>ID</th>
+        <th>State</th>
+        <th>Delete</th>
+        <th>Update</th>
+
+</tr>
+     {% for i in fetch %}
+
+<tr>
+         <td>{{i.id}}</td>
+        <td>{{i.Stater}}</td>
+         <td><a href="delete3/{{ i.id }}" style="color:black;">Delete</a></td>
+         <td><a href="update3/{{ i.id }}" style="color:black;">Update</a></td>
+
+
+   {% endfor %}
+</tr>
+</table>
+</div>
+<div class="col-sm-4">
+<!--    <img src="{% static 'image/45.png' %}" alt="my image" style="width:650px;height:420px; margin-left:10px;" >-->
+
+</div>
+</div>
+    <marquee>
+    <img src="{% static 'image/45.png' %}" alt="my image" style="width:650px;height:420px; margin-left:10px;" >
+        <img src="{% static 'image/45.png' %}" alt="my image" style="width:650px;height:420px; margin-left:10px;" >
+
+    </marquee>
+{% include 'footer.html' %}
+</body>
+</html>

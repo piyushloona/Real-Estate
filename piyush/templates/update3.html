@@ -1,0 +1,35 @@
+{% include 'header2.html' %}
+{% load static %}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div class="container-fluid" style="margin-top:50px;">
+<div class="col-sm-4">
+     <img src="{% static 'image/46.png' %}" alt="my image"style="image-size:200px; height:500px; width:450px;">
+
+</div>
+<div class="col-sm-4" style="background-color:#337AB7;color:white;border-radius:30px;  height:500px;width:400px; margin-left:50px; ">
+
+<h1 style="text-align:center;">Update Users</h1>
+<form action="up_st/{{ mymember.id }}" method='POST'>
+{% csrf_token %}
+    <label style="font-size:30px;margin-left:150px;margin-top:30px;">State</label><br>
+<input name="Stater"  style="color:black;width:350px;font-size:30px;margin-top:70px;" value="{{ mymember.Stater }}">
+<br><br>
+<input type="submit" style="color:black;margin-left:140px;font-size:30px;margin-top:50px;" value="Submit">
+</form>
+    </div>
+<div class="col-sm-4">
+    <img src="{% static 'image/47.png' %}" alt="my image"style=" height:500px; width:600px;margin-left:150px;">
+
+</div>
+    </div>
+<div class="yy" style="margin-top:110px;">
+    {% include 'footer.html' %}
+</div>
+</body>

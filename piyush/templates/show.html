@@ -1,0 +1,37 @@
+{% include 'header1.html' %}
+{% load static %}
+<div class="row">
+<h3 style="text-align:center;font-size:30px;">Show Properties</h3>
+<div class="container">
+    <div class="col-sm-12" style=" border-radius:10px; ">
+        <table  class="customers" border="1px" style="color:black;font-size:20px;margin-top:30px;margin-bottom:30px;" width="100px">
+            <tr>
+                <th>ID</th>
+                <th>State</th>
+                <th>Local Address</th>
+                <th>Description</th>
+                <th>Rent</th>
+                <th>Mobile</th>
+                <th>Delete</th>
+                <th>Update</th>
+                <th>District</th>
+</tr>
+        {% for i in fetch %}
+
+<tr>
+         <td>{{i.id}}</td>
+        <td>{{i.Stater}}</td>
+        <td>{{i.District}}</td>
+        <td>{{i.Local_Address}}</td>
+        <td>{{i.Description}}</td>
+        <td>{{i.Rent}}</td>
+        <td>{{i.Mobile}}</td>
+        <td><a href="delete/{{ i.id }}" >Delete</a></td>
+        <td><a href="update/{{ i.id }}" >Update</a></td>
+
+        {% endfor %}
+</tr>
+</table></div>
+</div>
+    </div>
+{% include 'footer.html' %}

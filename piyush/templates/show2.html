@@ -1,0 +1,79 @@
+{% include 'header2.html' %}
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+table{margin-left:0px;}
+table, th, td {
+  border: 4px solid black;
+  border-collapse: collapse;
+  margin-top:20px;
+  font-size:15px;
+   color:black;
+   padding:10px;
+}
+th {
+  text-align: left;
+  color:black;
+  font-size:20px;
+}
+table{
+    border-radius:10px;
+
+}
+td{background-color: #D6EEEE; font-size:20px;}
+th{color:black;}
+</style>
+<body>
+<div class="container-fluid">
+
+<div class="col-sm-2">
+<!-- <img src="{% static 'image/55.jpg' %}" alt="my image" style="height:400px; width:2000px;">-->
+
+</div>
+
+    <div class="col-sm-8" style="color:white;border-radius:10px;width:100%;">
+<table  class="customers" border="1px" >
+<tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Confirm Password</th>
+        <th>Select Member</th>
+        <th>Mobile</th>
+        <th>Delete</th>
+        <th>Update</th>
+</tr>
+        {% for i in fetch %}
+
+<tr>
+         <td>{{i.id}}</td>
+        <td>{{i.Name}}</td>
+        <td>{{i.Email}}</td>
+        <td>{{i.Password}}</td>
+        <td>{{i.Confirm_Password}}</td>
+        <td>{{i.Select_Member}}</td>
+        <td>{{i.Mobile}}</td>
+
+          <td><a href="delete4/{{ i.id }}" style="color:black;">Delete</a></td>
+         <td><a href="update4/{{ i.id }}" style="color:black;">Update</a></td>
+
+        {% endfor %}
+</tr>
+</table>
+</div>
+    </div>
+
+<img src="{% static 'image/67.jpg' %}" alt="my image"style=" height:500px; width:2030px;margin-top:30px;">
+
+<div class="pi">
+    {% include 'footer.html' %}
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{% include 'header.html' %}
+{% load static %}
+<form method="POST" class="post-form" action="{% url 'save' %}" autocomplete="off" >
+{% csrf_token %}
+ <hr>
+    <div class="main">
+        <div class="row">
+            <div class="col-sm-4">
+               <img src="{% static 'image/20.jpg' %}" alt="my image" style="image-size:100px;height:300px; width:500px;">
+               <img src="{% static 'image/21.jpg' %}" alt="my image"style="image-size:200px; height:300px; width:500px;">
+                
+            </div>
+            <div class="col-sm-4" >
+                <div class="formr" style="color:white;">
+                    {% if error %}
+	        <div class="alert alert-danger">{{error}}</div>
+	                {% endif %}
+                    <h2 style="text-align: center;">New User</h2>
+                    <label  style="font-size: 20px;"class="text">Enter Name</label><br>
+                    <input autocomplete="off" type="text" style="color:Black;" class="txt" name="uname" value="{{values.name}}"><br>
+
+                    <label   style="font-size: 20px;"class="text">Email</label><br>
+                    <input type="text" class="txt"  style="color:Black;" name="Email" value="{{values.email}}"> <br>
+                    
+                    <label   style="font-size: 20px;"class="text" >Password</label><br>
+                    <input type="password" class="txt"  name="Password"  style="color:Black;" value="{{values.passr}}" ><br>
+                    
+                    <label   style="font-size: 20px;"class="text" >Confirm Password</label><br>
+                    <input autocomplete="off" type="password" class="txt" name="Confirm_Password"  style="color:Black;"  value="{{values.cpassr}}"><br>
+
+
+                    <label   style="font-size: 20px;"class="text" >Select Member </label><br>
+                    <select class="form-control "  name="Select_Member" style="color:Black;">
+                        <option value="Select Member" style="color:Black;">Select Member </option>
+
+                        <option value="BCA" style="color:Black;">Idividual </option>
+                        <option value="MBA" style="color:Black;">Agent</option>
+                        <option value="BCA" style="color:Black;">Builder</option>
+                        
+                    </select>
+                    <label   style="font-size: 20px;"class="text" >Mobile NO. </label><br>
+                    <input type="text" class="txt"  name="Mobile"  style="color:Black;" value="{{values.mobile}}" ><br>
+                    <button type="submit" class="btn" name="Button" value="Submit" style="background-color:black;color:white;">Submit</button>
+                    <button type="reset" class="btn" name="Button2" value="Reset" style="background-color: black; color:white;">Reset</button>
+
+                </div>
+                </formr>
+
+
+            </div>
+             <div class="col-sm-4">
+                <img src="{% static 'image/19.jpg' %}" alt="my image" style="image-size:200px; height:300px; width:500px;">
+               <img src="{% static 'image/19.jpg' %}" alt="my image" style="image-size:200px; height:300px; width:500px;">
+
+            </div>
+          
+        
+    </div>
+    
+</div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                        <img src="{% static 'image/15.png' %}" alt="my image">
+   <h3 style="margin-left: 90px;">MR ENCLAVE</h3>
+                <h3 style="margin-left:60px;">1000-1200sq</h3>
+                <h3 style="margin-left:100px;">10,0000/-</h3>
+            </div>
+            <div class="col-sm-4">
+                <img src="{% static 'image/15.png' %}" alt="my image">
+                <h3 style="margin-left: 90px;">MR ENCLAVE</h3>
+                <h3 style="margin-left:60px;">1000-1200sq</h3>
+                <h3 style="margin-left:100px;">10,0000/-</h3>
+            </div>
+            <div class="col-sm-4">
+                <img src="{% static 'image/15.png' %}" alt="my image">
+                <h3 style="margin-left: 90px;">MR ENCLAVE</h3>
+                <h3 style="margin-left:60px;">1000-1200sq</h3>
+                <h3 style="margin-left:100px;">10,0000/-</h3>
+            </div>
+        </div>
+        </div>
+</form>
+{% include 'footer.html' %}

@@ -1,0 +1,26 @@
+{% include 'header2.html' %}
+{% load static %}
+
+<body>
+<div class="container-fluid">
+<div class="col-sm-4" style="margin-top:30px;">
+    <img src="{% static 'image/43.jpg' %}"  style="height:600px; width:640px;" alt="my image" ></div>
+<form method="POST" class="post-form" action="{% url 'Add_state' %}"  >
+    {% csrf_token %}
+
+<div class="col-sm-4" style="background-color:#337AB7;margin-top:30px; margin-left:110px; text-align:center; border-radius:10px; height:600px; width:400px;">
+    <h3 style="text-align:center;color:white;font-size:40px;">Add State</h3><br>
+    <label style="margin-top:50px; color:white;font-size:30px;">State</label>
+<input type="text" class="txt" style="margin-top:100px;font-size:30px;"  name="Stater" placeholder="Enter State"><br>
+    <button type="submit" style=" margin-left:0px;margin-top:70px;font-size:30px; " class="btn">Submit</button>
+
+</div>
+
+</form>
+<div class="col-sm-4">
+    <img src="{% static 'image/44.jpg' %}"  style="height:600px;margin-top:30px; width:700px; margin-left:120px;" alt="my image" ></div><br>
+</div>
+<div class="my">
+    {% include 'footer.html' %}
+    </div>
+</body>

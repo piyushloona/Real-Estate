@@ -1,0 +1,36 @@
+{% include 'header1.html' %}
+{% load static %}
+<body>
+
+<div class="row">
+    <div class="container">
+<!--    <div class="col-sm-4">-->
+<!--                <img src="{% static 'image/28.jpg' %}" alt="my image" style="height:300px;width:600px;">-->
+<!--</div>-->
+    <div class="col-sm-4" style="background-color:#337AB7; border-radius:10px; height:300px;margin-left:190px; width:600px;">
+<h4 style="color:white;text-align:center;">Search in Your Area</h4>
+    <form action="{% url 'searchr_view' %}" method="post">
+ {% csrf_token %}
+                {% if error %}
+	        <div class="alert alert-danger">{{error}}</div>
+	                {% endif %}
+
+<label for style="font-size:30px;margin-top:30px;color:white;margin-left:200px;"> Select State</label><br>
+ <select name="Stater"   style="width:130px;height:30px;margin-top:40px;width:400px;margin-left:100px;">
+    <option value="Select State">Select State</option>
+        {% for i in fetch %}
+        <option value="{{i.Stater}}">{{i.Stater}}</option>
+        {% endfor %}
+</select><br>
+<button type="Submit" class="btn btn-primary" name="btn" style="margin-top:30px;background-color:white;color:black; margin-left:250px;font-size:30px;">Search</button>
+
+ </form>
+    </div>
+    </div>
+
+    </div>
+
+                <img src="{% static 'image/28.jpg' %}" alt="my image" style="height:300px;width:2050px;">
+
+{% include 'footer.html' %}
+</body>

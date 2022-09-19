@@ -1,0 +1,27 @@
+{% include 'header.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="col-sm-4">
+                <img src="{% static 'image/28.jpg' %}" alt="my image" style="height:900px; width:2000px;">
+</div>
+<div class="col-sm-4" style="background-color:#337AB7; border-radius:10px;margin-left:150px; height:350px; width:500px;">
+<h4 style="color:white;text-align:center;">Search Property</h4><hr>
+    <form action="{% url 'search_property' %}" method="post">
+ {% csrf_token %}
+                {% if error %}
+	        <div class="alert alert-danger">{{error}}</div>
+	                {% endif %}
+<label for style="margin-top:40px;color:white;font-size:30px;">State</label>
+ <select name="Stater"  style="font-size:30px;width:300px;;">
+    <option value="Select State">Select State</option>
+        {% for i in fetch %}
+        <option value="{{i.Stater}}">{{i.Stater}}</option>
+        {% endfor %}
+</select><br>
+<button type="Submit" name="btn" style="margin-top:30px; margin-left:170px;font-size:20px;background-color:white;">Search</button>
+     </form>
+    </div>
+</body>
+</html>

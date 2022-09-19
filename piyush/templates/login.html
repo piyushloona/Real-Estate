@@ -1,0 +1,76 @@
+{% include 'header.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<form method="POST" class="post-form" action="{% url 'loginchk' %}" autocomplete="off">
+{% csrf_token %}
+
+   <div class="main">
+        <div class="row">
+            <div class="col-sm-4">
+             <img src="{% static 'image/20.jpg' %}" style="width:600px;" alt="my image"><hr>
+            <img src="{% static 'image/20.jpg' %}" style="width:600px;height:400px;" alt="my image">
+
+            </div>
+            <div class="col-sm-4">
+                <div class="form" style="color:white;">
+                     <div class="py">
+                    {% if error %}
+	        <div class="alert alert-danger">{{error}}</div>
+	                {% endif %}
+
+                    <h2 style="text-align: center;">Login User</h2>
+                    <label for  style="font-size: 20px;"class="text" >Email</label><br>
+                         <i class="fa fa-envelope" style="font-size:30px;color:white;" aria-hidden="true"></i>
+                    <input type="text" class="txt" name="Email" value="{{values.email}}" style="color:black;border:1px black solid;"><br>
+
+                    <label for style="font-size: 20px;"class="text">Password</label><br>
+                         <i class="fa fa-unlock" aria-hidden="true"  style="font-size:30px;color:white;"></i>
+                    <input type="password" class="txt"  name="Password" value="{{values.password}}" style="color:black;border:1px black solid;"><br>
+                    <button type="submit"  class="btn" name="Button" value="Submit" style="background-color:white;color:black;">Submit</button>
+                    <button type="reset"  name="Button1" class="btn" value="Reset" style="background-color: white; color:black;">Reset</button>
+
+                    <label for  style="font-size: 20px;float:right;"class="text">Create New Account</label><br>
+                    <img src="logo.png" alt="" class="img-responsive" style=" margin-left: 60px;">
+                </div>
+
+
+            </div>
+                <img src="{% static 'image/62.jpg' %}" alt="my image" style="width:600px;height:400px;margin-top:120px; "><hr>
+
+            </div>
+             <div class="col-sm-4" >
+                <img src="{% static 'image/19.jpg' %}" alt="my image" style="width:600px;height:400px;"><hr>
+                <img src="{% static 'image/19.jpg' %}" alt="my image" style="width:600px;height:400px;">
+
+            </div>
+            </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="{% static 'image/15.png' %}" alt="my image"><h3 style="margin-left: 90px;">MR ENCLAVE</h3>
+                <h3 style="margin-left:60px;">1000-1200sq</h3>
+                <h3 style="margin-left:100px;">10,0000/-</h3>
+            </div>
+            <div class="col-sm-4">
+                <img src="{% static 'image/15.png' %}" alt="my image"><h3 style="margin-left: 90px;">MR ENCLAVE</h3>
+                <h3 style="margin-left: 90px;">MR ENCLAVE</h3>
+                <h3 style="margin-left:60px;">1000-1200sq</h3>
+                <h3 style="margin-left:100px;">10,0000/-</h3>
+            </div>
+            <div class="col-sm-4">
+                <img src="{% static 'image/15.png' %}" alt="my image"><h3 style="margin-left: 90px;">MR ENCLAVE</h3>
+                <h3 style="margin-left: 90px;">MR ENCLAVE</h3>
+                <h3 style="margin-left:60px;">1000-1200sq</h3>
+                <h3 style="margin-left:100px;">10,0000/-</h3>
+            </div>
+        </div>
+        </div>
+   </div>
+
+</form>
+{% include 'footer.html' %}

@@ -1,0 +1,21 @@
+{% include 'header1.html' %}
+<body>
+<form method="POST" class="post-form">
+    {% csrf_token %}
+ <hr>
+            <div class="col-sm-4">
+                <div class="formr">
+                    <h2 style="text-align: center;">Search Property</h2>
+                    <label for style="font-size: 20px;"class="text">State</label><br>
+                    <input type="text" class="txt" name="State"><br>
+                    <button type="submit" class="btn" value="Submit" style="background-color:black;color:white;">Submit</button>
+
+                </div>
+
+
+            </div>
+
+</form>
+
+
+</body>

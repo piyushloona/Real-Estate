@@ -1,0 +1,61 @@
+{% include 'header1.html' %}
+{% load static %}
+<html>
+<head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+table, th, td {
+  border: 4px solid white;
+  border-collapse: collapse;
+  margin-top:20px;
+  font-size:15px;
+  padding:20px;
+
+}
+th {
+  text-align: left;
+  color:white;
+  font-size:20px;
+}
+table{
+    border-radius:10px;
+}
+td{background-color: #D6EEEE;}
+</style>
+<body>
+<div class="col-sm-4" style="border-radius:10px;">
+    <img src="{% static 'image/59.jpg' %}" alt="my image" style="height:850px; width:2000px;margin-left:10px;">
+
+
+</div>
+   <div class="col-sm-4" style="margin-left:20px;">
+<table style="width:100%">
+
+        <th>District</th>
+        <th>Local Address</th>
+        <th>Description</th>
+        <th>Rent</th>
+        <th>Mobile</th>
+
+
+        {% for i in fetch %}
+
+<tr>
+        <td>{{i.District}}</td>
+        <td>{{i.Local_Address}}</td>
+        <td>{{i.Description}}</td>
+        <td>{{i.Rent}}</td>
+        <td>{{i.Mobile}}</td>
+
+
+
+        {% endfor %}
+</tr>
+</table>
+   </div>
+</body>
+</html>

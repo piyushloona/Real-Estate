@@ -1,0 +1,22 @@
+{% include 'header1.html' %}
+{% load static %}
+<html>
+<body>
+<div class="col-sm-4" style="border-radius:10px;">
+    <img src="{% static 'image/36.jpg' %}" alt="my image" style="height:700px; width:1690px;">
+
+
+</div>
+    <div class="col-sm-4" style="background-color:#337AB7; border-radius:10px;  ">
+<table border="1px" style="color:white;">
+
+<select>
+    <option value="Select City">Select City</option>
+        {% for i in fetch %}
+        <option value="{{i.Stater}}">{{i.Stater}}</option>
+        {% endfor %}
+</select>
+</table>
+</div>
+</body>
+</html>

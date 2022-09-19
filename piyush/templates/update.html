@@ -1,0 +1,41 @@
+{% include 'header1.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<body>
+
+<div class="col-sm-4">
+     <img src="{% static 'image/64.webp' %}" alt="my image" style="height:900px; width:2000px;border-radius:10px;">
+</div>
+<div class="col-sm-4" style="background-color:width:500px;height:700px;">
+
+<h1 style="color:white;margin-left:60px;">Update Property</h1>
+
+<form action="upadpr/{{ mymember.id }}" method="post">
+    {% csrf_token %}
+ <label style="color:white;font-size:30px;">State</label><br>
+<input name="State"  style="width:400px;font-size:25px;" value="{{ mymember.Stater }}">
+<br><br>
+<label style="color:white;font-size:30px;">District</label><br>
+<input name="District"  style="width:400px;font-size:25px;"value="{{ mymember.District }}">
+<br><br>
+    <label style="color:white;font-size:30px;">Local_Address</label><br>
+<input name="Local" style="width:400px;font-size:25px;" value="{{ mymember.Local_Address }}">
+<br><br>
+<label style="color:white;font-size:30px;">Description</label><br>
+<input name="Description" style="width:400px;font-size:25px;" value="{{ mymember.Description }}">
+<br><br>
+<label style="color:white;font-size:30px;">Rent</label><br>
+<input name="Rent" style="width:400px;font-size:25px;" value="{{ mymember.Rent }}">
+<br><br>
+<label style="color:white;font-size:30px;">Mobile</label><br>
+<input name="Mobile" style="width:400px;font-size:25px;" value="{{ mymember.Mobile }}">
+<br><br>
+
+
+<input type="submit" value="Submit" style="font-size:30px;margin-left:150px;">
+</form>
+    </div>
+</body>

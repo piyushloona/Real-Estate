@@ -1,0 +1,73 @@
+{% include 'header2.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<html>
+<style>
+table, th, td {
+  border: 4px solid black;
+  border-collapse: collapse;
+  margin-top:20px;
+  font-size:20px;
+
+}
+th {
+  text-align: left;
+  color:black;
+  font-size:20px;
+}
+table{
+    border-radius:10px;
+    width:70px;
+
+}
+td{background-color: #D6EEEE; font-size:30px;}
+</style>
+<body>
+<div class="container">
+<!--<div class="col-sm-4" >-->
+<!--     <img src="{% static 'image/52.jpg' %}" alt="my image"  style="width:600px;height;height:400px;" >-->
+<!--</div>-->
+    <div class="col-sm-8" style="margin-left:0px;">
+<table class="customers" border="1px;" >
+<tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Confirm Password</th>
+        <th>Select Member</th>
+        <th>Mobile</th>
+        <th>Delete</th>
+        <th>Update</th>
+</tr>
+        {% for i in fetch %}
+
+<tr>
+         <td>{{i.id}}</td>
+        <td>{{i.Name}}</td>
+        <td>{{i.Email}}</td>
+        <td>{{i.Password}}</td>
+        <td>{{i.Confirm_Password}}</td>
+        <td>{{i.Select_Member}}</td>
+        <td>{{i.Mobile}}</td>
+
+         <td><a style="color:black;" href="delete2/{{ i.id }}" >Delete</a></td>
+         <td><a style="color:black;" href="update2/{{ i.id }}" >Update</a></td>
+
+        {% endfor %}
+</tr>
+</table>
+</div>
+    </div>
+<div class="pi" style="margin-top:30px;">
+        <marquee >
+     <img src="{% static 'image/52.jpg' %}" alt="my image"  style="width:2000px;height;height:600px;" >
+            </marquee>
+</div>
+
+{% include 'footer.html' %}
+</body>
+</html>

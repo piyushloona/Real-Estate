@@ -1,0 +1,61 @@
+{% include 'header.html' %}
+{% load static %}
+<form method="POST" class="post-form" >
+{% csrf_token %}
+
+    <div class="main">
+        <div class="row">
+            <div class="col-sm-4">
+
+                <img src="{% static 'image/20.jpg' %}" alt="my image" style="height:500px; width:550px;">
+            </div>
+            <div class="col-sm-4">
+                <div class="forms">
+                     {% if error %}
+	        <div class="alert alert-danger">{{error}}</div>
+	                {% endif %}
+                    <h2 style="text-align: center;"> Admin Login</h2>
+                    <label for  style="font-size: 20px;"class="text">Email</label><br>
+                    <input type="text" class="txt" name="Email"   style="color:black;" ><br>
+
+                    <label for  style="font-size: 20px;"class="text">Password</label><br>
+                    <input type="password" class="txt" name="Password"    style="color:black;" ><br>
+                    <button type="submit" class="btn" value="Submit" style="background-color:white;color:black; font-size: 30px;">Submit</button>
+                    <button type="submit" class="btn" value="Submit" style="background-color: white; color:black;font-size: 30px;">Reset</button><br>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-4">
+                <img src="{% static 'image/20.jpg' %}" alt="my image" style="image-size:200px; height:500px; width:450px;">
+            </div>
+
+        </div>
+    </div>
+</form>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+          <img src="{% static 'image/15.png' %}" alt="my image">
+                <h3 style="margin-left: 90px;">MR ENCLAVE</h3>
+                <h3 style="margin-left:60px;">1000-1200sq</h3>
+                <h3 style="margin-left:100px;">10,0000/-</h3>
+            </div>
+            <div class="col-sm-4">
+          <img src="{% static 'image/15.png' %}" alt="my image">
+                <h3 style="margin-left: 90px;">MR ENCLAVE</h3>
+                <h3 style="margin-left:60px;">1000-1200sq</h3>
+                <h3 style="margin-left:100px;">10,0000/-</h3>
+            </div>
+            <div class="col-sm-4">
+          <img src="{% static 'image/15.png' %}" alt="my image">
+                <h3 style="margin-left: 90px;">MR ENCLAVE</h3>
+                <h3 style="margin-left:60px;">1000-1200sq</h3>
+                <h3 style="margin-left:100px;">10,0000/-</h3>
+            </div>
+        </div>
+        </div>
+    </div>
+{% include 'footer.html' %}
